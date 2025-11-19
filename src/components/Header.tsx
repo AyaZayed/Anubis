@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import logo from "figma:asset/9510351381a969aadcdda0e25f5da9d4bf65f2bb.png";
 import { BsTwitterX } from "react-icons/bs";
 
 interface HeaderProps {
@@ -50,7 +49,7 @@ export function Header({ theme = "dark" }: HeaderProps) {
             <div className="flex items-center justify-between">
                <Link to="/" className="flex items-center">
                   <img
-                     src={logo}
+                     src={"https://res.cloudinary.com/dijc5luus/image/upload/v1763567566/logo_kbwzez.png"}
                      alt="Anubis Old Stones"
                      className="h-12 md:h-14"
                   />

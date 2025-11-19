@@ -4,7 +4,6 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { motion } from "motion/react";
-import background from "figma:asset/d56297db5c14f891f4c4402e1221b98705784974.png";
 
 export function HomePage() {
   const [callbackForm, setCallbackForm] = useState({ name: "", phone: "", message: "" });
@@ -35,7 +34,7 @@ export function HomePage() {
       <section className="relative min-h-screen bg-[#1C1C1C] flex items-center">
         <div className="absolute inset-0">
           <img
-            src={background}
+            src={"https://res.cloudinary.com/dijc5luus/image/upload/v1763567565/background_rafl1o.jpg"}
             alt="Ancient stone background"
             className="w-full h-full object-cover opacity-50"
           />

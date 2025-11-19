@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Mail, Phone, MapPin,Linkedin } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import logo from "figma:asset/9510351381a969aadcdda0e25f5da9d4bf65f2bb.png";
 import { BsTwitterX } from "react-icons/bs";
 
 export function Footer() {
@@ -20,7 +19,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <img src={logo} alt="Anubis Old Stones" className="h-12 mb-4" />
+            <img src={"https://res.cloudinary.com/dijc5luus/image/upload/v1763567566/logo_kbwzez.png"} alt="Anubis Old Stones" className="h-12 mb-4" />
             <p className="text-[#B7B7B7] mb-4">
               Premium Material — Professional Execution
             </p>
