@@ -2,36 +2,31 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 
 const collections = [
-  {
-    id: "egyptian-granite-marble",
-    name: "Egyptian Granite & Marble",
-    image: "https://images.unsplash.com/photo-1611480191880-3730b46f8ded?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZ3lwdGlhbiUyMGdyYW5pdGUlMjBibGFja3xlbnwxfHx8fDE3NjI0Njc2ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    id: "turkish-granite-marble",
-    name: "Turkish Granite & Marble",
-    image: "https://images.unsplash.com/photo-1674831309300-5a38ba6a3092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0dXJraXNoJTIwZ3Jhbml0ZSUyMHRleHR1cmV8ZW58MXx8fHwxNzYyNDY3Njg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    id: "italian-marble",
-    name: "Italian Marble Series",
-    image: "https://images.unsplash.com/photo-1721678597454-8124f3e85c09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpdGFsaWFuJTIwbWFyYmxlJTIwd2hpdGV8ZW58MXx8fHwxNzYyNDY3Njg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    id: "egyptian-ceramic",
-    name: "Egyptian Ceramic",
-    image: "https://images.unsplash.com/photo-1559925534-3ef09900cfd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjZXJhbWljJTIwdGlsZSUyMHBhdHRlcm58ZW58MXx8fHwxNzYyNDU3ODc5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    id: "turkish-ceramic",
-    name: "Turkish Ceramic",
-    image: "https://images.unsplash.com/photo-1695191388218-f6259600223f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjZXJhbWljJTIwdGlsZXN8ZW58MXx8fHwxNzYyNDYzNjcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    id: "german-laminate",
-    name: "Premium German Laminate Series",
-    image: "https://images.unsplash.com/photo-1639890460733-49c80e1e5e5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwbGFtaW5hdGUlMjB0ZXh0dXJlfGVufDF8fHx8MTc2MjQ2NzY5MXww&ixlib=rb-4.1.0&q=80&w=1080",
-  },
+   {
+      id: "egyptian-granite",
+      name: "Egyptian Granite",
+      image: "https://res.cloudinary.com/dijc5luus/image/upload/v1763554889/egyptian_granite_4_wkvfne.jpg",
+   },
+   {
+      id: "egyptian-marble",
+      name: "Egyptian Marble",
+      image: "https://res.cloudinary.com/dijc5luus/image/upload/v1763554913/egyptian_marble_3_enbfqf.jpg",
+   },
+   {
+      id: "turkish-marble",
+      name: "Turkish Marble",
+      image: "https://res.cloudinary.com/dijc5luus/image/upload/v1763554997/turkish_marble_1_ndwusz.jpg",
+   },
+   {
+      id: "italian-marble",
+      name: "Italian Marble Series",
+      image: "https://res.cloudinary.com/dijc5luus/image/upload/v1763554948/italian_marble_3_zmm3zv.jpg",
+   },
+   {
+      id: "german-laminate",
+      name: "Premium German Laminate Series",
+      image: "https://res.cloudinary.com/dijc5luus/image/upload/v1763554976/german_laminate_3_dhkc65.png",
+   },
 ];
 
 export function CollectionsPage() {

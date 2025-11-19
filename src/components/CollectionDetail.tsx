@@ -7,240 +7,251 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 
 // Collection data with descriptions for each item
-const collectionsData: Record<string, {
-  name: string;
-  description: string;
-  origin: string;
-  subcategories: {
-    name: string;
-    description: string;
-    items: { 
-      name: string; 
-      image: string; 
-      specs?: string;
-      description: string;
-    }[];
-  }[];
-}> = {
-  "egyptian-granite-marble": {
-    name: "Egyptian Granite & Marble",
-    description: "Sourced from the ancient quarries of Egypt, these stones carry millennia of natural formation. Each piece reflects the timeless beauty that built the pyramids and temples of antiquity.",
-    origin: "Egypt",
-    subcategories: [
-      {
-        name: "Granite",
-        description: "Durable granite formations from Aswan and the Eastern Desert, known for exceptional hardness and rich, deep colors.",
-        items: [
-          { 
-            name: "Aswan Black", 
-            image: "https://images.unsplash.com/photo-1611480191880-3730b46f8ded?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "Polished finish",
-            description: "Deep black granite with subtle silver flecking, quarried from ancient Aswan sites. Exceptional durability for high-traffic areas."
-          },
-          { 
-            name: "Nile Grey", 
-            image: "https://images.unsplash.com/photo-1674831309300-5a38ba6a3092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "Honed finish",
-            description: "Sophisticated grey granite with natural veining patterns. Perfect for contemporary interiors requiring understated elegance."
-          },
-          { 
-            name: "Sahara Gold", 
-            image: "https://images.unsplash.com/photo-1677754598609-50a3754f5f79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "Brushed finish",
-            description: "Warm golden granite with amber undertones, evoking the desert landscape. Ideal for creating inviting, luxury spaces."
-          },
-        ]
-      },
-      {
-        name: "Marble",
-        description: "Premium Egyptian marble with warm, creamy tones and subtle veining, perfect for sophisticated interior applications.",
-        items: [
-          { 
-            name: "Cairo Cream", 
-            image: "https://images.unsplash.com/photo-1677754598609-50a3754f5f79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "Polished",
-            description: "Creamy beige marble with delicate veining. A timeless choice for flooring, walls, and countertops in elegant spaces."
-          },
-          { 
-            name: "Luxor Beige", 
-            image: "https://images.unsplash.com/photo-1643034738686-d69e7bc047e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "Honed",
-            description: "Soft beige marble with subtle brown veining, named after the ancient city. Perfect for traditional and contemporary designs."
-          },
-        ]
-      }
-    ]
-  },
-  "turkish-granite-marble": {
-    name: "Turkish Granite & Marble",
-    description: "From the highlands of Anatolia and the coasts of the Aegean, Turkish stone brings dynamic patterns and superior structural integrity.",
-    origin: "Turkey",
-    subcategories: [
-      {
-        name: "Granite",
-        description: "Robust granite varieties with distinctive grain patterns and exceptional weather resistance.",
-        items: [
-          { 
-            name: "Anatolia Grey", 
-            image: "https://images.unsplash.com/photo-1674831309300-5a38ba6a3092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "Medium grey granite with distinctive movement and character. Excellent for both interior and exterior applications."
-          },
-          { 
-            name: "Bosphorus Black", 
-            image: "https://images.unsplash.com/photo-1761864419043-1a7fb363de47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "Rich black granite with subtle gold veining. Creates dramatic, sophisticated spaces with timeless appeal."
-          },
-          { 
-            name: "Istanbul Brown", 
-            image: "https://images.unsplash.com/photo-1611480191880-3730b46f8ded?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "Warm brown granite with natural depth and variation. Ideal for creating warm, inviting commercial and residential spaces."
-          },
-        ]
-      }
-    ]
-  },
-  "italian-marble": {
-    name: "Italian Marble Series",
-    description: "The pinnacle of marble craftsmanship from the quarries of Carrara and Tuscany. These marbles have adorned the world's finest architecture for centuries.",
-    origin: "Italy",
-    subcategories: [
-      {
-        name: "Classic Whites",
-        description: "Pure white marbles with elegant veining, the standard for luxury and refinement.",
-        items: [
-          { 
-            name: "Carrara White", 
-            image: "https://images.unsplash.com/photo-1721678597454-8124f3e85c09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "The iconic white marble with grey veining, used by Michelangelo. Perfect for luxury bathrooms, kitchens, and feature walls."
-          },
-          { 
-            name: "Calacatta Gold", 
-            image: "https://images.unsplash.com/photo-1677754598609-50a3754f5f79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "Premium white marble with distinctive gold and grey veining. The ultimate statement piece for prestigious projects."
-          },
-          { 
-            name: "Statuario", 
-            image: "https://images.unsplash.com/photo-1643034738686-d69e7bc047e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "Rare white marble with bold grey veining. Exclusive material for high-end residential and commercial applications."
-          },
-        ]
-      },
-      {
-        name: "Rich Darks",
-        description: "Deep, dramatic marbles that create bold statements in any space.",
-        items: [
-          { 
-            name: "Emperador Dark", 
-            image: "https://images.unsplash.com/photo-1611480191880-3730b46f8ded?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "Deep brown marble with white and gold veining. Creates luxurious, dramatic interiors with unmatched sophistication."
-          },
-        ]
-      }
-    ]
-  },
-  "egyptian-ceramic": {
-    name: "Egyptian Ceramic",
-    description: "Modern ceramic tiles inspired by ancient Egyptian craftsmanship, manufactured to German standards with Egyptian aesthetic sensibilities.",
-    origin: "Egypt",
-    subcategories: [
-      {
-        name: "Floor Series",
-        description: "High-traffic ceramic tiles with superior wear resistance and moisture protection.",
-        items: [
-          { 
-            name: "Desert Sand 60x60", 
-            image: "https://images.unsplash.com/photo-1559925534-3ef09900cfd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "Matt finish",
-            description: "Large format floor tiles in warm sand tones. Non-slip surface ideal for high-traffic commercial and residential areas."
-          },
-          { 
-            name: "Nile Blue 45x45", 
-            image: "https://images.unsplash.com/photo-1559925534-3ef09900cfd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "Glazed",
-            description: "Vibrant blue glazed ceramic inspired by the Nile. Perfect for feature walls and spa-like bathroom environments."
-          },
-        ]
-      },
-      {
-        name: "Wall Series",
-        description: "Elegant wall tiles perfect for bathrooms and feature walls.",
-        items: [
-          { 
-            name: "Pyramid White 30x60", 
-            image: "https://images.unsplash.com/photo-1695191388218-f6259600223f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "Glossy",
-            description: "Crisp white glossy tiles that reflect light beautifully. Ideal for creating bright, clean bathroom and kitchen spaces."
-          },
-        ]
-      }
-    ]
-  },
-  "turkish-ceramic": {
-    name: "Turkish Ceramic",
-    description: "Contemporary Turkish ceramics combining traditional techniques with modern design, offering diverse patterns and exceptional durability.",
-    origin: "Turkey",
-    subcategories: [
-      {
-        name: "Large Format",
-        description: "Oversized tiles for seamless, modern installations with minimal grout lines.",
-        items: [
-          { 
-            name: "Istanbul Modern 60x120", 
-            image: "https://images.unsplash.com/photo-1695191388218-f6259600223f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "Contemporary large format tiles with subtle stone effect. Perfect for creating seamless, modern floor and wall installations."
-          },
-          { 
-            name: "Cappadocia Grey 60x60", 
-            image: "https://images.unsplash.com/photo-1695191388218-f6259600223f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "Large grey tiles inspired by Cappadocia's unique landscape. Ideal for commercial and residential modern designs."
-          },
-        ]
-      },
-      {
-        name: "Standard Format",
-        description: "Versatile sizes suitable for both residential and commercial applications.",
-        items: [
-          { 
-            name: "Aegean Stone 30x60", 
-            image: "https://images.unsplash.com/photo-1559925534-3ef09900cfd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-            description: "Natural stone-effect ceramic in versatile dimensions. Perfect for both walls and floors in various applications."
-          },
-        ]
-      }
-    ]
-  },
-  "german-laminate": {
-    name: "Premium German Laminate Series",
-    description: "Precision-engineered German laminates offering the warmth of natural wood with superior durability and moisture resistance. Perfect for modern living spaces.",
-    origin: "Germany",
-    subcategories: [
-      {
-        name: "Classic Woods",
-        description: "Authentic wood reproductions with advanced wear layer technology and lifetime warranties.",
-        items: [
-          { 
-            name: "Berlin Oak", 
-            image: "https://images.unsplash.com/photo-1639890460733-49c80e1e5e5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "AC5 rating",
-            description: "Premium oak laminate with natural grain patterns and texture. AC5 commercial-grade durability for high-traffic areas."
-          },
-          { 
-            name: "Munich Walnut", 
-            image: "https://images.unsplash.com/photo-1639890460733-49c80e1e5e5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "AC5 rating",
-            description: "Rich walnut finish with authentic wood character. German engineering ensures long-lasting beauty and performance."
-          },
-          { 
-            name: "Hamburg Pine", 
-            image: "https://images.unsplash.com/photo-1639890460733-49c80e1e5e5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600", 
-            specs: "AC4 rating",
-            description: "Light pine laminate bringing Scandinavian warmth. AC4 residential-grade, perfect for living areas and bedrooms."
-          },
-        ]
-      }
-    ]
-  }
+// --------------------
+// TYPES
+// --------------------
+
+export interface CollectionItem {
+   name: string;
+   image: string;
+   description: string;
+   specs?: string;
+}
+
+export interface Subcategory {
+   name: string;
+   description: string;
+   items: CollectionItem[];
+}
+
+export interface Collection {
+   name: string;
+   description: string;
+   origin: string;
+   subcategories: Subcategory[];
+}
+
+export type CollectionsData = Record<string, Collection>;
+
+// --------------------
+// DATA
+// --------------------
+
+export const collectionsData: CollectionsData = {
+   "egyptian-granite": {
+      name: "Egyptian Granite",
+      description:
+         "Durable density — high strength — reliable pricing. Egyptian granite offers exceptional structural properties with consistent mineral composition. Quarried from stable geological formations, these materials deliver reliable performance in high-traffic commercial and residential applications.",
+      origin: "Egypt",
+      subcategories: [
+         {
+            name: "Granite",
+            description:
+               "High-density granite formations with excellent strength and reliable performance across interior and exterior applications.",
+            items: [
+               {
+                  name: "Egyptian Granite 01",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554888/egyptian_granite_1_j0owjc.jpg",
+                  description:
+                     "Fine-grain granite with balanced mineral structure, ideal for flooring, counters, and heavy-use surfaces.",
+               },
+               {
+                  name: "Egyptian Granite 02",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554889/egyptian_granite_2_tnqu94.jpg",
+                  description:
+                     "Strong, consistent granite offering high durability in commercial finishing environments.",
+               },
+               {
+                  name: "Egyptian Granite 03",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554888/egyptian_granite_3_wpkn4k.jpg",
+                  description:
+                     "Warm-toned granite with natural texture variations; a reliable choice for interior and exterior specifications.",
+               },
+               {
+                  name: "Egyptian Granite 04",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554889/egyptian_granite_4_wkvfne.jpg",
+                  description:
+                     "Dense granite with stable performance characteristics and excellent structural reliability.",
+               },
+            ],
+         },
+      ],
+   },
+
+   "egyptian-marble": {
+      name: "Egyptian Marble",
+      description:
+         "Premium patterns — good brightness — cost-efficient. Egyptian marble combines aesthetic versatility with practical pricing structures. Natural veining patterns and consistent brightness levels make these materials suitable for interior feature applications where visual impact is essential.",
+      origin: "Egypt",
+      subcategories: [
+         {
+            name: "Marble",
+            description:
+               "Marble selections offering strong brightness, elegant movement, and excellent value for interior applications.",
+            items: [
+               {
+                  name: "Egyptian Marble 01",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554912/egyptian_marble_1_fllvpk.jpg",
+                  description:
+                     "Light-toned marble with soft veining, ideal for bright architectural spaces requiring refined aesthetics.",
+               },
+               {
+                  name: "Egyptian Marble 02",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554913/egyptian_marble_2_gmsbeu.jpg",
+                  description:
+                     "Neutral beige marble with subtle movement, suitable for feature walls and polished interior finishes.",
+               },
+               {
+                  name: "Egyptian Marble 03",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554913/egyptian_marble_3_enbfqf.jpg",
+                  description:
+                     "Warm cream marble offering balanced veining and consistent tone for modern interior projects.",
+               },
+               {
+                  name: "Egyptian Marble 04",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554913/egyptian_marble_4_vfpp2b.jpg",
+                  description:
+                     "Premium marble with strong brightness and controlled patterning — ideal for luxury finishes.",
+               },
+            ],
+         },
+      ],
+   },
+
+   "turkish-marble": {
+      name: "Turkish Marble",
+      description:
+         "Attractive veins — balanced price-versus-look. Turkish marble delivers visual sophistication at entry-level investment points. Distinctive veining characteristics and neutral colour palettes align well with contemporary design specifications across commercial and residential sectors.",
+      origin: "Turkey",
+      subcategories: [
+         {
+            name: "Marble",
+            description:
+               "Elegant Turkish marble with expressive movement and neutral tones suitable for refined interiors.",
+            items: [
+               {
+                  name: "Turkish Marble 01",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554997/turkish_marble_1_ndwusz.jpg",
+                  description:
+                     "Clean veining with contemporary tones—ideal for both commercial and residential finishing.",
+               },
+               {
+                  name: "Turkish Marble 02",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554998/turkish_marble_2_khodvm.jpg",
+                  description:
+                     "Soft, neutral marble with refined grain movement, suited for minimal interior concepts.",
+               },
+               {
+                  name: "Turkish Marble 03",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554999/turkish_marble_3_dzinvy.jpg",
+                  description:
+                     "Modern grey marble with distinct linear veining, adding controlled character to architectural spaces.",
+               },
+               {
+                  name: "Turkish Marble 04",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554999/turkish_marble_4_epykys.jpg",
+                  description:
+                     "Premium marble featuring bold, expressive patterns—ideal for feature surfaces and high-impact interiors.",
+               },
+            ],
+         },
+      ],
+   },
+
+   "italian-marble": {
+      name: "Italian Marble",
+      description:
+         "European authenticity — modern neutral tones. Italian marble from our entry range offers genuine European provenance without premium tier pricing. Clean, contemporary aesthetics with subtle veining suit refined architectural specifications where material origin carries design significance.",
+      origin: "Italy",
+      subcategories: [
+         {
+            name: "Marble",
+            description:
+               "Luxury Italian marbles selected for refined veining and contemporary architectural compatibility.",
+            items: [
+               {
+                  name: "Italian Marble 01",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554947/italian_marble_1_zgpiej.jpg",
+                  description:
+                     "Soft white marble with gentle grey movement — a timeless modern European finish.",
+               },
+               {
+                  name: "Italian Marble 02",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554947/italian_marble_2_u1ubf9.jpg",
+                  description:
+                     "Neutral-toned marble with subtle veining offering minimalist architectural appeal.",
+               },
+               {
+                  name: "Italian Marble 03",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554948/italian_marble_3_zmm3zv.jpg",
+                  description:
+                     "Elegant stone with structured veining—suitable for premium interior feature applications.",
+               },
+            ],
+         },
+      ],
+   },
+
+   "german-laminate": {
+      name: "Premium German Laminate Series",
+      description:
+         "Stable core — precision finishing — engineered consistency. German-engineered laminate systems deliver dimensional stability and surface consistency that natural stone cannot match. Multi-layer construction with precision finishing enables predictable performance in moisture-variable environments and temperature-sensitive applications.",
+      origin: "Germany",
+      subcategories: [
+         {
+            name: "Laminate",
+            description:
+               "High-performance laminates engineered for stability, realistic texture, and long-term surface consistency.",
+            items: [
+               {
+                  name: "German Laminate 01",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554974/german_laminate_1_js8sgq.png",
+                  description:
+                     "Natural-toned laminate with balanced texture and engineered moisture resistance.",
+               },
+               {
+                  name: "German Laminate 02",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554975/german_laminate_2_oepfsd.png",
+                  description:
+                     "Classic wood finish with excellent dimensional stability and wear resistance.",
+               },
+               {
+                  name: "German Laminate 03",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554976/german_laminate_3_dhkc65.png",
+                  description:
+                     "High-definition grain texture engineered for modern commercial specifications.",
+               },
+               {
+                  name: "German Laminate 04",
+                  image:
+                     "https://res.cloudinary.com/dijc5luus/image/upload/v1763554975/german_laminate_4_bqtl9z.png",
+                  description:
+                     "Light Scandinavian wood tone with consistent finishing and long-term performance.",
+               },
+            ],
+         },
+      ],
+   },
 };
+
 
 export function CollectionDetail() {
   const { id } = useParams<{ id: string }>();
@@ -378,12 +389,14 @@ export function CollectionDetail() {
                     <p className="text-[#1C1C1C] mb-6 leading-relaxed">
                       {item.description}
                     </p>
+                    <a href="#quote">
                     <Button 
                       onClick={() => setQuoteForm({ ...quoteForm, material: item.name })}
                       className="bg-[#C6A664] hover:bg-[#C6A664]/90 text-[#1C1C1C]"
                     >
                       Request Quotation
                     </Button>
+                      </a>
                   </div>
                 </motion.div>
               ))}
@@ -426,7 +439,7 @@ export function CollectionDetail() {
       ))}
 
       {/* Quotation Form */}
-      <section className="py-24 bg-[#1C1C1C]">
+      <section className="py-24 bg-[#1C1C1C]" id="quote">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
             <motion.div

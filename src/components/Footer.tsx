@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Music, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, MapPin,Linkedin } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import logo from "figma:asset/9510351381a969aadcdda0e25f5da9d4bf65f2bb.png";
+import { BsTwitterX } from "react-icons/bs";
 
 export function Footer() {
   return (
@@ -24,13 +25,13 @@ export function Footer() {
               Premium Material — Professional Execution
             </p>
             <p className="text-[#B7B7B7] text-sm">
-              Specialist supplier and finishing contractor for granite, marble, ceramic, and German laminate materials.
+              Specialist supplier and finishing contractor for granite, marble, and German laminate materials.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-[#C6A664] mb-4">Quick Links</h3>
+            <h3 className="text-[#C6A664] mb-4 text-xl font-serif font-semibold">Quick Links</h3>
             <nav className="flex flex-col gap-3">
               <Link to="/" className="text-[#B7B7B7] hover:text-[#C6A664] transition-colors">Home</Link>
               <Link to="/about" className="text-[#B7B7B7] hover:text-[#C6A664] transition-colors">About Us</Link>
@@ -42,32 +43,42 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-[#C6A664] mb-4">Contact Us</h3>
+            <h3 className="text-[#C6A664] mb-4 text-xl font-serif font-semibold">Contact Us</h3>
             <div className="flex flex-col gap-3 text-[#B7B7B7]">
-              <a href="tel:+254123456789" className="flex items-center gap-2 hover:text-[#C6A664] transition-colors">
-                <Phone size={16} />
+              <a 
+                href="tel:+254123456789" 
+                className="flex items-center gap-2 hover:text-[#C6A664] transition-colors"
+              >
+                <Phone size={18} className="flex-shrink-0" />
                 <span>+254 123 456 789</span>
               </a>
-              <a href="mailto:info@anubisoldstones.com" className="flex items-center gap-2 hover:text-[#C6A664] transition-colors">
-                <Mail size={16} />
+              <a 
+                href="mailto:info@anubisoldstones.com" 
+                className="flex items-center gap-2 hover:text-[#C6A664] transition-colors"
+              >
+                <Mail size={18} className="flex-shrink-0" />
                 <span>info@anubisoldstones.com</span>
               </a>
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="mt-1 flex-shrink-0" />
+               <a 
+                href="https://maps.app.goo.gl/Y4QUspan4gEeSN527?g_st=ipc" 
+                className="flex items-center gap-2 hover:text-[#C6A664] transition-colors"
+              >
+                <MapPin size={18} className="flex-shrink-0" />
                 <span>Nairobi, Kenya</span>
-              </div>
+              </a>
             </div>
           </div>
 
           {/* Social Media */}
           <div>
-            <h3 className="text-[#C6A664] mb-4">Follow Us</h3>
+            <h3 className="text-[#C6A664] mb-4 text-xl font-serif font-semibold">Follow Us</h3>
             <div className="flex gap-4">
               <a 
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 bg-[#C6A664]/10 hover:bg-[#C6A664] text-white rounded flex items-center justify-center transition-colors"
+                aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
@@ -76,16 +87,27 @@ export function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 bg-[#C6A664]/10 hover:bg-[#C6A664] text-white rounded flex items-center justify-center transition-colors"
+                aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://tiktok.com" 
+                href="https://www.linkedin.com/company/anubis-old-stones-ltd/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-10 h-10 bg-[#C6A664]/10 hover:bg-[#C6A664] text-white rounded flex items-center justify-center transition-colors"
+                aria-label="TikTok"
               >
-                <Music size={20} />
+                <Linkedin size={20} />
+              </a>
+               <a 
+                href="https://www.x.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 bg-[#C6A664]/10 hover:bg-[#C6A664] text-white rounded flex items-center justify-center transition-colors"
+                aria-label="TikTok"
+              >
+                <BsTwitterX size={18} />
               </a>
             </div>
           </div>

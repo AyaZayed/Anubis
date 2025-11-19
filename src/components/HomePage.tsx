@@ -16,13 +16,12 @@ export function HomePage() {
   };
 
   const collections = [
-    { id: "egyptian-granite-marble", name: "Egyptian Granite & Marble" },
-    { id: "turkish-granite-marble", name: "Turkish Granite & Marble" },
-    { id: "italian-marble", name: "Italian Marble Series" },
-    { id: "egyptian-ceramic", name: "Egyptian Ceramic" },
-    { id: "turkish-ceramic", name: "Turkish Ceramic" },
-    { id: "german-laminate", name: "Premium German Laminate Series" }
-  ];
+      { id: "egyptian-granite", name: "Egyptian Granite" },
+      { id: "egyptian-marble", name: "Egyptian Marble" },
+      { id: "turkish-marble", name: "Turkish Marble" },
+      { id: "italian-marble", name: "Italian Marble" },
+      { id: "german-laminate", name: "German Laminate" },
+   ];
 
   return (
     <motion.div 
@@ -55,7 +54,7 @@ export function HomePage() {
               Formed over millennia. Finished with precision
             </p>
             <Link to="/collections">
-              <Button className="bg-[#C6A664] hover:bg-[#C6A664]/90 text-[#1C1C1C] px-10 py-6">
+              <Button className="cursor-pointer bg-[#C6A664] hover:bg-[#C6A664]/90 text-[#1C1C1C] px-10 py-6">
                 VIEW COLLECTIONS
               </Button>
             </Link>
@@ -72,7 +71,7 @@ export function HomePage() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl"
         >
-          <h2 className="text-[#C6A664] mb-8">Who We Are</h2>
+          <h2 className="text-[#C6A664] mb-8 text-2xl font-serif font-bold">Who We Are</h2>
           <p className="text-[#1C1C1C] text-lg leading-relaxed mb-6">
             <strong>ANUBIS OLD STONES LTD</strong> is a registered material supplier and finishing contractor based in Nairobi – importing selected Granite, Marble, Ceramic and German Laminate from Egypt, Italy, Turkey and Germany.
           </p>

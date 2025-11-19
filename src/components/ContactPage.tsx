@@ -52,70 +52,7 @@ export function ContactPage() {
 
       {/* Contact Form & Info */}
       <section className="py-24 container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-[#C6A664] mb-8">Send Us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Input
-                  type="text"
-                  placeholder="Your Name *"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="bg-white border-[#B7B7B7]/30 focus:border-[#C6A664]"
-                />
-              </div>
-              <div>
-                <Input
-                  type="email"
-                  placeholder="Your Email *"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="bg-white border-[#B7B7B7]/30 focus:border-[#C6A664]"
-                />
-              </div>
-              <div>
-                <Input
-                  type="tel"
-                  placeholder="Your Phone *"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  required
-                  className="bg-white border-[#B7B7B7]/30 focus:border-[#C6A664]"
-                />
-              </div>
-              <div>
-                <Input
-                  type="text"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="bg-white border-[#B7B7B7]/30 focus:border-[#C6A664]"
-                />
-              </div>
-              <div>
-                <Textarea
-                  placeholder="Your Message *"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                  rows={6}
-                  className="bg-white border-[#B7B7B7]/30 focus:border-[#C6A664]"
-                />
-              </div>
-              <Button type="submit" className="bg-[#C6A664] hover:bg-[#C6A664]/90 text-[#1C1C1C] px-8 py-6 w-full">
-                SEND MESSAGE
-              </Button>
-            </form>
-          </motion.div>
+        <div>
 
           {/* Contact Info */}
           <motion.div
@@ -136,7 +73,7 @@ export function ContactPage() {
                     <p className="text-[#B7B7B7] mb-1">Email</p>
                     <a 
                       href="mailto:anubisoldstones@outlook.com" 
-                      className="text-[#1C1C1C] hover:text-[#C6A664] transition-colors"
+                      className="text-[#1C1C1C] hover:text-[#C6A664] transition-colors text-nowrap"
                     >
                       anubisoldstones@outlook.com
                     </a>
@@ -149,7 +86,12 @@ export function ContactPage() {
                   </div>
                   <div>
                     <p className="text-[#B7B7B7] mb-1">Phone</p>
-                    <p className="text-[#1C1C1C]">+254 123 456 789</p>
+                     <a 
+                      href="tel:+254123456789" 
+                      className="text-[#1C1C1C] hover:text-[#C6A664] transition-colors text-nowrap"
+                    >
+                      +254 123 456 789
+                    </a>
                   </div>
                 </div>
 
@@ -159,7 +101,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <p className="text-[#B7B7B7] mb-1">Address</p>
-                    <p className="text-[#1C1C1C]">P.O.Box: 22485-00505<br />Nairobi, Kenya</p>
+                    <p className="text-[#1C1C1C] text-base">9 West, Ground floor, Otrovato showroom. Westlands, Nairobi</p>
                   </div>
                 </div>
 
@@ -171,20 +113,20 @@ export function ContactPage() {
       </section>
 
       {/* Map Section with Overlapping Card */}
-      <section className="pb-0 relative">
+      <section className="pb-6 relative">
         <div className="container mx-auto px-6 mb-12">
           <motion.h2
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-[#C6A664] mb-8 text-center"
+            className="text-[#C6A664] mb-8 text-center font-semibold text-2xl"
           >
             Find Us
           </motion.h2>
         </div>
         
-        <div className="relative">
+        <div className="relative px-12 mb-12">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -192,16 +134,16 @@ export function ContactPage() {
             transition={{ duration: 0.6 }}
             className="w-full h-[600px] bg-[#B7B7B7]/20"
           >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19036827308!2d36.70730744999999!3d-1.286389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Nairobi Location"
-            />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.851081588022!2d36.8039548!3d-1.2616436000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1714c84c7fb1%3A0x895b47f790f15b00!2s9%20West%2C%20Mkungu%20Cl%2C%20Nairobi%2C%20Kenya!5e0!3m2!1sen!2seg!4v1763559151077!5m2!1sen!2seg" 
+               width="100%"
+                     height="100%"
+                     style={{ border: 0 }}
+                     allowFullScreen
+                     loading="lazy"
+                     referrerPolicy="no-referrer-when-downgrade"
+                     title="Anubis Location"
+              ></iframe>
+              
           </motion.div>
 
           {/* Overlapping Contact Card */}

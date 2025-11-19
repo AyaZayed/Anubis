@@ -1,23 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@400;500&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --font-size: 16px;
+  --font-sans:"Poppins",sans-serif;
+  --font-serif:"Cinzel",serif;
   --background: #ffffff;
-  --foreground: #1C1C1C;
+  --foreground: #1c1c1c;
   --card: #ffffff;
-  --card-foreground: #1C1C1C;
+  --card-foreground: #1c1c1c;
   --popover: #ffffff;
-  --popover-foreground: #1C1C1C;
-  --primary: #1C1C1C;
+  --popover-foreground: #1c1c1c;
+  --primary: #1c1c1c;
   --primary-foreground: #ffffff;
-  --secondary: #B7B7B7;
-  --secondary-foreground: #1C1C1C;
+  --secondary: #b7b7b7;
+  --secondary-foreground: #1c1c1c;
   --muted: #ececf0;
   --muted-foreground: #717182;
-  --accent: #C6A664;
-  --accent-foreground: #1C1C1C;
+  --accent: #c6a664;
+  --accent-foreground: #1c1c1c;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
   --border: rgba(0, 0, 0, 0.1);
@@ -26,7 +28,7 @@
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #C6A664;
+  --ring: #c6a664;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -41,11 +43,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  
+
   /* Anubis brand colors */
-  --gold: #C6A664;
-  --matte-black: #1C1C1C;
-  --stone-gray: #B7B7B7;
+  --gold: #c6a664;
+  --matte-black: #1c1c1c;
+  --stone-gray: #b7b7b7;
 }
 
 .dark {
@@ -119,9 +121,13 @@
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary-foreground: var(
+    --sidebar-primary-foreground
+  );
   --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent-foreground: var(
+    --sidebar-accent-foreground
+  );
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 }
@@ -133,7 +139,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 
@@ -141,23 +147,25 @@
  * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
  */
 @layer base {
-  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+  :where(
+    :not(:has([class*=" text-"]), :not(:has([class^="text-"])))
+  ) {
     h1 {
-      font-family: 'Cinzel', serif;
+      font-family: "Cinzel", serif;
       font-size: 3.5rem;
       font-weight: 700;
       line-height: 1.2;
     }
 
     h2 {
-      font-family: 'Cinzel', serif;
+      font-family: "Cinzel", serif;
       font-size: 2.5rem;
       font-weight: 600;
       line-height: 1.3;
     }
 
     h3 {
-      font-family: 'Cinzel', serif;
+      font-family: "Cinzel", serif;
       font-size: 1.25rem;
       font-weight: 600;
       line-height: 1.4;
@@ -191,4 +199,9 @@
 
 html {
   font-size: var(--font-size);
+}
+
+::selection {
+  background-color: #c6a664;
+  color: black;
 }
