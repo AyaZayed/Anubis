@@ -34,7 +34,7 @@ export function HomePage() {
       <section className="relative min-h-screen bg-[#1C1C1C] flex items-center">
         <div className="absolute inset-0">
           <img
-            src={"https://res.cloudinary.com/dijc5luus/image/upload/v1763567565/background_rafl1o.jpg"}
+            src={"https://plus.unsplash.com/premium_photo-1707655580150-30585451ea66?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
             alt="Ancient stone background"
             className="w-full h-full object-cover opacity-50"
           />
@@ -125,7 +125,7 @@ export function HomePage() {
               className="relative h-[500px]"
             >
               <img
-                src="https://images.unsplash.com/photo-1728242410399-0c272a7703fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmNpZW50JTIwZWd5cHQlMjBoaWVyb2dseXBoaWNzfGVufDF8fHx8MTc2MzQwOTE4MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="https://res.cloudinary.com/dijc5luus/image/upload/v1763575266/wmremove-transformed_lr6gyv.jpg"
                 alt="Ancient Egyptian hieroglyphics"
                 className="w-full h-full object-cover"
               />
